@@ -9,7 +9,7 @@ format_date = input(f"В каком формате показывать дату
 
 print("\nВы ввели следующие данные:")
 print("Имя пользователя:", username)
-print("Заголовки заметки:", title)
+print("Заголовок заметки:", title)
 print("Описание заметки:", content)
 print("Статус заметки:", status)
 if '1' in format_date:
