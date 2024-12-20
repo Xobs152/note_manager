@@ -1,9 +1,9 @@
-username = "Иван Иванов"
-title = "Покупка продуктов"
-content = "Купить молок, хлеб и яйца"
+username = "Влад Кайбелев"
+title = "Хоккей"
+content = "Купить билеты на матч"
 status = "Активна"
 created_date = "27-05-2024"
-issue_date = "30-05-2024"
+issue_date = "28-05-2024"
 
 print("Имя пользователя:", username)
 print("Заголовок заметки:", title)
