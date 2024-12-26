@@ -84,8 +84,6 @@ while True:
         answer_option = input("Введите корректные данные. Удалить ещё одну заметку? (да/нет): ")
     if answer_option.lower() == 'да':
         continue
-    elif answer_option.lower() == 'нет':
-        break
 
     ### Вложенный цикл, который выводит все заметки из списка
     for i in range(0, len(notes)):
