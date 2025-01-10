@@ -81,7 +81,7 @@ while True:
     ### Если пользователь, вводит что-то не то, программа уведомляет и спрашивает повторно
     answer_option = input("\nДобавить ещё одну заметку? (да/нет): ")
     while answer_option.lower() != 'да' and answer_option.lower() != 'нет':
-        answer_option = input("Введите корректные данные. Удалить ещё одну заметку? (да/нет): ")
+        answer_option = input("Введите корректные данные. Добавить ещё одну заметку? (да/нет): ")
     if answer_option.lower() == 'да':
         continue
 
