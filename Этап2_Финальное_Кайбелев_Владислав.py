@@ -76,7 +76,7 @@ while True:
         if choosing_a_status == '1':
             status = "Выполнено"
             print("\nТекущий статус заметки: '" + status + "'")
-            continue
+            break
         elif choosing_a_status == '2':
             status = "Активна"
             print("\nТекущий статус заметки: '" + status + "'")
@@ -120,6 +120,8 @@ while True:
             print("Ваш дедлайн истекает сегодня!")
         elif issue_date_class_datetime.date() < current_date.date():
             print("Ваш дедлайн истёк!")
+            print("Количество дней, когда истёк дедлайн:",
+                  (current_date.date() - issue_date_class_datetime.date()).days)
         else:
             print("\nКоличество оставшихся дней до дедлайна:",
                   (issue_date_class_datetime.date() - current_date.date()).days)
@@ -150,6 +152,7 @@ while True:
         continue
 
     ### Вложенный цикл, который выводит все заметки из списка
+    print("Список заметок:")
     for i in range(0, len(notes)):
         for _ in notes[i]:
             print(f"\nЗаметка №{i + 1}")
@@ -168,8 +171,13 @@ while True:
 
 ### Данный блок кода позволяет удалить заметки, если пользователь того желает, в противном случае программа полностью прекращает свою работу
 ### Если пользователь вводит неправильно вариант ответа, программа уведомляет его об этом и переспрашивает
-answer_option = input("\nЖелаете удалить заметку? (да/нет): ")
 while True:
+    ### Если основной список с заметками пуст, значит пользователь удалил все заметки и программа заканчивает свою работу
+    if len(notes) == 0:
+        print("\nДо свидания! Ждем вас снова!")
+        break
+
+    answer_option = input("\nЖелаете удалить заметку? (да/нет): ")
     if answer_option.lower() == 'да':
         ### Цикл, выводящий первые три пункта заметки
         for i in range(0, len(notes)):
@@ -191,6 +199,7 @@ while True:
                 if deleting_note.lower() == notes[j]['username'].lower() or deleting_note.lower() in notes[j]['titles']:
                     notes.pop(j)
                     break
+
             ### Если длина списка равна нулю, значит пользователь удалил все заметки, программа уведомляет об этом и заканчивает свою работу
             if len(notes) == 0:
                 print("Успешно удалено. Заметок больше не осталось.")
@@ -221,11 +230,12 @@ while True:
             if answer_option.lower() == 'да':
                 continue
             elif answer_option.lower() == 'нет':
-                break
+                print("\nДо свидания! Ждем вас снова!")
+                exit()
             break
     elif answer_option.lower() == 'нет':
         print("\nДо свидания! Ждем вас снова!")
         break
     else:
-        answer_option = input("Введите корректные данные. Желаете удалить заметку? (да/нет): ")
+        print("Введите корректные данные.")
         continue
