@@ -18,6 +18,7 @@ while True:
         print("Ваш дедлайн истекает сегодня!")
     elif issue_date.date() < current_date.date():
         print("Ваш дедлайн истёк!")
+        print("Количество дней, когда истёк дедлайн:", (current_date.date() - issue_date.date()).days)
     else:
         print("Количество оставшихся дней до дедлайна:", (issue_date.date() - current_date.date()).days)
     break
