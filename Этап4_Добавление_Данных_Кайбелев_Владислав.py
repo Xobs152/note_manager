@@ -16,7 +16,7 @@ new_notes = [
 
 
 ### Функция для добавления заметок в файл
-def save_notes_to_file(notes, filename):
+def append_notes_to_file(notes, filename):
     ### Начинаем вести запись в наш файл, если данного файла не существует, то он создастся
     file = open(filename, 'a', encoding='utf-8')
 
@@ -38,4 +38,4 @@ def save_notes_to_file(notes, filename):
 
 
 ### Вызываем функцию
-save_notes_to_file(new_notes, "notes.txt")
+append_notes_to_file(new_notes, "notes.txt")
